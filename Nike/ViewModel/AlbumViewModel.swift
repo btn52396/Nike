@@ -11,10 +11,16 @@ import UIKit
 class AlbumViewModel {
     
     let album: Album
+    let itunesLink: String
     var albumImage: UIImage?
     
     init(album: Album) {
         self.album = album
+        
+        let itunesPrefix = "itms://itunes.apple.com/"
+        let url = URL(string: album.url)
+        let itunesSuffix = url?.pathComponents.dropFirst().joined(separator: "/") ?? ""
+        self.itunesLink = itunesPrefix + itunesSuffix
     }
     
     /// Configures a cell
@@ -40,6 +46,8 @@ class AlbumViewModel {
     
     /// Configures a view
     public func configure(view: AlbumDetailsView) {
+        print(album.url)
+        print(itunesLink)
         view.albumLabel.text = album.name
         view.artistLabel.text = album.artistName
         view.releaseDateLabel.text = "Released " + album.releaseDate.format(withFormat: "MMM d, yyyy")

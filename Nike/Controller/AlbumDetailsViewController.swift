@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbumDetailsViewController: UIViewController {
+class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
     var albumViewModel: AlbumViewModel? = nil
     
     var albumDetailsView: AlbumDetailsView = {
@@ -19,15 +19,21 @@ class AlbumDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        albumDetailsView.delegate = self
+
         setupViews()
-        
-        if !UIDevice.current.isSimulator {
-            
-        } else {
-            // Ensure that the user is not on a simulator
-//            showAlert(title: "Error", message: "Application can only open the iTunes store with a real device.")
+    }
+    
+    @objc func handleVisitAlbum() {
+        guard
+            let itunesLink = albumViewModel?.itunesLink,
+            let url = URL(string: itunesLink),
+            UIApplication.shared.canOpenURL(url) else {
+            showAlert(title: "Error", message: "Application can only open the iTunes store with a real device.")
+            return
         }
+        
+        UIApplication.shared.open(url)
     }
         
     private func setupViews() {

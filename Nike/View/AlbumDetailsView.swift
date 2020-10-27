@@ -10,6 +10,8 @@ import UIKit
 
 class AlbumDetailsView: UIView {
     
+    weak var delegate: AlbumDetailsViewDelegate?
+    
     var albumImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.backgroundColor = .secondaryBackground
@@ -60,6 +62,7 @@ class AlbumDetailsView: UIView {
         button.titleLabel?.font = .button
         button.layer.cornerRadius = .buttonRadius
         button.layer.masksToBounds = true
+        button.addTarget(delegate, action: #selector(delegate?.handleVisitAlbum), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -135,4 +138,9 @@ class AlbumDetailsView: UIView {
         visitAlbumButton.rightAnchor.constraint(equalTo: rightAnchor, constant: .buttonSpacing * -1).isActive = true
         visitAlbumButton.heightAnchor.constraint(equalToConstant: .buttonHeight).isActive = true
     }
+}
+
+@objc protocol AlbumDetailsViewDelegate: class {
+    
+    @objc func handleVisitAlbum()
 }
