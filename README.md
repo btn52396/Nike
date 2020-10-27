@@ -5,7 +5,7 @@ Nike programming assessment to demonstrate technical depth and ability. Applicat
 - Singleton network client to handle fetching image and json network using URLSession
 - Asynchronous and lazy image fetching
 - Unit/UI testing
-- Presents a view that allow user to retry fetching if there is an network error
+- Presents a view that allow user to retry fetching if there is an network error when fetching the JSON file
 - Auto layout anchor constraints
 - Dark mode support
 ## Specs
