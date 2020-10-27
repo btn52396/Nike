@@ -13,22 +13,19 @@ import UIKit
 extension UIColor {
 
     /// Label color
-    public static var label: UIColor = .dynamicColor(
-        light: .black,
-        dark: .white)
+    public static var label: UIColor = .dynamicColor(light: .black,
+                                                     dark: .white)
     /// Visit album button title color
     public static var buttonTitle: UIColor = .white
     /// Visit album button background color
     public static var buttonBackground: UIColor = .init(hex: "#D73C4B")
     /// Primary background color (package view)
-    public static var primaryBackground: UIColor = .dynamicColor(
-        light: .white,
-        dark: .black)
+    public static var primaryBackground: UIColor = .dynamicColor(light: .white,
+                                                                 dark: .black)
 
     /// Secondary background color (view controller)
-    public static var secondaryBackground: UIColor = .dynamicColor(
-        light: .gray(level: 1),
-        dark: .gray(level: 6))
+    public static var secondaryBackground: UIColor = .dynamicColor(light: .gray(level: 1),
+                                                                   dark: .gray(level: 6))
 
     /// Gray color according to the level
     /// - Parameter level: 1 to 6, light to dark scale
