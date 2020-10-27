@@ -46,8 +46,6 @@ class AlbumViewModel {
     
     /// Configures a view
     public func configure(view: AlbumDetailsView) {
-        print(album.url)
-        print(itunesLink)
         view.albumLabel.text = album.name
         view.artistLabel.text = album.artistName
         view.releaseDateLabel.text = "Released " + album.releaseDate.format(withFormat: "MMM d, yyyy")
