@@ -10,6 +10,8 @@ import UIKit
 
 class AlbumCell: UITableViewCell {
     
+    // MARK: - Property Variables
+    
     var viewModel: AlbumViewModel?
     
     var albumImageView: UIImageView = {
@@ -21,7 +23,7 @@ class AlbumCell: UITableViewCell {
     
     var albumLabel: UILabel = {
         let label = UILabel()
-        label.font = .title
+        label.font = .previewTitle
         label.textColor = .label
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,14 +31,14 @@ class AlbumCell: UITableViewCell {
 
     var artistLabel: UILabel = {
         let label = UILabel()
-        label.font = .body
+        label.font = .previewBody
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     
-    // MARK: -  Configuration
+    // MARK: -  Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,6 +62,8 @@ class AlbumCell: UITableViewCell {
     public func configure() {
         viewModel?.configure(cell: self)
     }
+    
+    // MARK: - Constraints
     
     private func setupAlbumImageView() {
         albumImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: .cellSpacing).isActive = true

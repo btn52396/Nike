@@ -9,6 +9,9 @@
 import UIKit
 
 class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
+    
+    // MARK: - Property variables
+    
     var albumViewModel: AlbumViewModel? = nil
     
     var albumDetailsView: AlbumDetailsView = {
@@ -17,12 +20,16 @@ class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
         return albumDetailsView
     }()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         albumDetailsView.delegate = self
 
         setupViews()
     }
+    
+    // MARK: - Handle delegate
     
     @objc func handleVisitAlbum() {
         guard
@@ -35,11 +42,13 @@ class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
         
         UIApplication.shared.open(url)
     }
-        
+    
+    // MARK: - Setup Views
+    
     private func setupViews() {
         view.backgroundColor = .primaryBackground
         title = "Album Details"
-        
+            
         view.addSubview(albumDetailsView)
         setupAlbumDetailsView()
     }

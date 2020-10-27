@@ -10,6 +10,9 @@ import Foundation
 
 extension String {
     
+    /// Formats a 'yyyy-MM-dd' date to a more readable friendly format
+    /// - Parameters:
+    ///     - withFormat: The format to change the date to
     func format(withFormat format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"

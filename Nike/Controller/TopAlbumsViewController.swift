@@ -10,16 +10,22 @@ import UIKit
 
 class TopAlbumsViewController: UITableViewController, RefreshDelegate {
     
+    // MARK: - Variable properties
+    
     private let retryViewController = RetryViewController()
     private let spinnerViewController = SpinnerViewController()
     private let cellId = "AlbumCell"
     private var albumViewModels: [AlbumViewModel] = []
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         fetch()
     }
+    
+    // MARK: - Setup Views
     
     private func setupViews() {
         view.backgroundColor = .primaryBackground
@@ -38,6 +44,10 @@ class TopAlbumsViewController: UITableViewController, RefreshDelegate {
         tableView.backgroundView = spinnerViewController.view
     }
     
+    /// Calls the network client to fetch the albums.
+    /// Present the retry view if the fetch fails - function can be called again from
+    /// the retry view. If fetch is successful, generate view models and
+    /// reload the tableView and populate it with the album details.
     @objc func fetch() {
         NikeClient.shared.fetchAlbums { (error) in
             if error != nil {
@@ -49,6 +59,7 @@ class TopAlbumsViewController: UITableViewController, RefreshDelegate {
         }
     }
     
+    /// Configures view models for each album using the models generated from the JSON file
     private func configureViewModels() {
         for album in NikeClient.shared.albums {
             albumViewModels.append(AlbumViewModel(album: album))
@@ -62,6 +73,7 @@ class TopAlbumsViewController: UITableViewController, RefreshDelegate {
         }
     }
     
+    /// Present retry view
     private func showRetryView() {
         DispatchQueue.main.async {
             self.tableView.backgroundView = self.retryViewController.view

@@ -47,7 +47,7 @@ extension UIColor {
         }
     }
 
-    /// Gray color according to the level
+    /// FightCamp gray color according to the level
     /// - Parameter level: 1 to 6, light to dark scale
     /// - Returns: gray color
     private static func gray(level: Int) -> UIColor {

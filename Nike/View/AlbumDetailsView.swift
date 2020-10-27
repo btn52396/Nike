@@ -10,6 +10,8 @@ import UIKit
 
 class AlbumDetailsView: UIView {
     
+    // MARK: - Property variables
+    
     weak var delegate: AlbumDetailsViewDelegate?
     
     var albumImageView: UIImageView = {
@@ -67,6 +69,8 @@ class AlbumDetailsView: UIView {
         return button
     }()
 
+    // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -94,7 +98,9 @@ class AlbumDetailsView: UIView {
         setupCopyrightLabel()
         setupVisitAlbumButton()
     }
-        
+    
+    // MARK: - Constraints
+    
     private func setupAlbumImageView() {
         albumImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         albumImageView.topAnchor.constraint(equalTo: topAnchor, constant: .detailsSpacing).isActive = true

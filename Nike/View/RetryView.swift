@@ -10,6 +10,8 @@ import UIKit
 
 class RetryView: UIView {
     
+    // MARK: - Property variables
+    
     weak var delegate: RefreshDelegate?
     
     private let title: UILabel = {
@@ -51,6 +53,8 @@ class RetryView: UIView {
         return button
     }()
     
+    // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -72,6 +76,8 @@ class RetryView: UIView {
         setupSubtitle()
         setupTryAgainButton()
     }
+    
+    // MARK: - Constraints
     
     private func setupNoInternetImageView() {
         noInternetImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

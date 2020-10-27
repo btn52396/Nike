@@ -9,12 +9,14 @@
 import Foundation
 
 // MARK: - Response
+
 struct Response: Decodable {
     
     let feed: Feed
 }
 
 // MARK: - Feed
+
 struct Feed: Decodable {
     
     let title: String
@@ -34,6 +36,7 @@ struct Feed: Decodable {
 }
 
 // MARK: - Author
+
 struct Author: Decodable {
     
     let name: String
@@ -53,6 +56,7 @@ struct Link: Decodable {
 }
 
 // MARK: - Album
+
 struct Album: Decodable {
     
     let artistName: String
@@ -74,6 +78,7 @@ struct Album: Decodable {
 }
 
 // MARK: - Genre
+
 struct Genre: Decodable {
     
     let genreId: String

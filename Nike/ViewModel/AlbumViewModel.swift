@@ -10,6 +10,8 @@ import UIKit
 
 class AlbumViewModel {
     
+    // MARK: - Property variables
+    
     let album: Album
     let itunesLink: String
     var albumImage: UIImage?
@@ -17,18 +19,23 @@ class AlbumViewModel {
     init(album: Album) {
         self.album = album
         
+        // Forms the itunes appstore link
         let itunesPrefix = "itms://itunes.apple.com/"
         let url = URL(string: album.url)
         let itunesSuffix = url?.pathComponents.dropFirst().joined(separator: "/") ?? ""
         self.itunesLink = itunesPrefix + itunesSuffix
     }
     
-    /// Configures a cell
+    // MARK: - View configurations
+    
+    /// Configures a cell with the album properties
     public func configure(cell: AlbumCell) {
         cell.albumLabel.text = album.name
         cell.artistLabel.text = album.artistName
         cell.albumImageView.image = nil
         
+        // Sets the cached image if it is already downloaded, otherwise
+        // fetch the image from network
         if let albumImage = albumImage {
             cell.albumImageView.image = albumImage
         } else {
@@ -44,7 +51,7 @@ class AlbumViewModel {
         }
     }
     
-    /// Configures a view
+    /// Configures a view with the properties
     public func configure(view: AlbumDetailsView) {
         view.albumLabel.text = album.name
         view.artistLabel.text = album.artistName
@@ -52,6 +59,8 @@ class AlbumViewModel {
         view.copyrightLabel.text = album.copyright
         view.genreLabel.text = album.genres.first?.name
         
+        // Sets the cached image if it is already downloaded, otherwise
+        // fetch the image from network
         if let albumImage = albumImage {
             view.albumImageView.image = albumImage
         } else {
@@ -61,6 +70,10 @@ class AlbumViewModel {
         }
     }
     
+    // MARK: - Network
+    
+    /// Wrapper for fetchImage in the NikeClient
+    /// Saves the image in cache upon completion
     private func fetchImage(completionHandler: @escaping () -> ()) {
         NikeClient.shared.fetchImage(link: album.artworkUrl100) { (image) in
             self.albumImage = image

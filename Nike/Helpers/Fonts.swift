@@ -13,12 +13,12 @@ import UIKit
 extension UIFont {
 
     /// Overview title label font
-    public static var title: UIFont = UIFont(
+    public static var previewTitle: UIFont = UIFont(
         name: .graphikMedium,
         size: 14) ?? .systemFont(ofSize: 14)
     
     /// Overview  body label font
-    public static var body: UIFont = UIFont(
+    public static var previewBody: UIFont = UIFont(
         name: .graphikMedium,
         size: 11) ?? .systemFont(ofSize: 11)
     
