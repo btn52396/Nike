@@ -39,7 +39,13 @@ class AlbumViewModel {
     }
     
     /// Configures a view
-    public func configure(view: AlbumDetailsView) {        
+    public func configure(view: AlbumDetailsView) {
+        view.albumLabel.text = album.name
+        view.artistLabel.text = album.artistName
+        view.releaseDateLabel.text = "Released " + album.releaseDate.format(withFormat: "MMM d, yyyy")
+        view.copyrightLabel.text = album.copyright
+        view.genreLabel.text = album.genres.first?.name
+        
         if let albumImage = albumImage {
             view.albumImageView.image = albumImage
         } else {

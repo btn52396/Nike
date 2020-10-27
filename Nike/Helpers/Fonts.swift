@@ -12,16 +12,31 @@ import UIKit
 
 extension UIFont {
 
-    /// Package title label font
+    /// Overview title label font
     public static var title: UIFont = UIFont(
         name: .graphikMedium,
         size: 14) ?? .systemFont(ofSize: 14)
-
-    /// Package description label & package accessories label & price title label
+    
+    /// Overview  body label font
     public static var body: UIFont = UIFont(
         name: .graphikMedium,
         size: 11) ?? .systemFont(ofSize: 11)
-
+    
+    /// Album Details title label font
+    public static var detailsTitle: UIFont = UIFont(
+        name: .graphikMedium,
+        size: 22) ?? .systemFont(ofSize: 22)
+    
+    /// Album Details artist name
+    public static var detailsSubtitle: UIFont = UIFont(
+        name: .graphikMedium,
+        size: 16) ?? .systemFont(ofSize: 16)
+    
+    /// Album Details artist name
+    public static var detailsBody: UIFont = UIFont(
+        name: .graphikRegular,
+        size: 12) ?? .systemFont(ofSize: 12)
+    
     /// Price label font
     public static var price: UIFont = UIFont(
         name: .graphikMedium,

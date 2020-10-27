@@ -19,7 +19,7 @@ class AlbumDetailsView: UIView {
 
     var albumLabel: UILabel = {
         let label = UILabel()
-        label.font = .title
+        label.font = .detailsTitle
         label.textColor = .label
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -27,23 +27,24 @@ class AlbumDetailsView: UIView {
         return label
     }()
 
-    var artistLabel: UILabel = {
+    var artistLabel = subtitleLabel()
+    var genreLabel: UILabel = subtitleLabel()
+    var releaseDateLabel: UILabel = bodyLabel()
+    var copyrightLabel: UILabel = bodyLabel()
+    
+    static private func subtitleLabel() -> UILabel {
         let label = UILabel()
-        label.font = .body
+        label.font = .detailsSubtitle
         label.textColor = .label
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    var genreLabel: UILabel = bodyLabel()
-    var releaseDateLabel: UILabel = bodyLabel()
-    var copyrightLabel: UILabel = bodyLabel()
+    }
     
     static private func bodyLabel() -> UILabel {
         let label = UILabel()
-        label.font = .title
+        label.font = .detailsBody
         label.textColor = .label
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -83,10 +84,12 @@ class AlbumDetailsView: UIView {
         addSubview(visitAlbumButton)
 
         setupAlbumImageView()
-        setupVisitAlbumButton()
         setupAlbumLabel()
         setupArtistLabel()
-        
+        setupGenreLabel()
+        setupReleaseDateLabel()
+        setupCopyrightLabel()
+        setupVisitAlbumButton()
     }
         
     private func setupAlbumImageView() {
@@ -97,31 +100,31 @@ class AlbumDetailsView: UIView {
     }
     
     private func setupAlbumLabel() {
-        albumLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: .detailsSpacing).isActive = true
+        albumLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: 30).isActive = true
         albumLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: .detailsSpacing).isActive = true
         albumLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: .detailsSpacing * -1).isActive = true
     }
     
     private func setupArtistLabel() {
-        artistLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: .detailsSpacing).isActive = true
+        artistLabel.topAnchor.constraint(equalTo: albumLabel.bottomAnchor, constant: .detailsLabelSpacing).isActive = true
         artistLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: .detailsSpacing).isActive = true
         artistLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: .detailsSpacing * -1).isActive = true
     }
     
     private func setupGenreLabel() {
-        genreLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: .detailsSpacing).isActive = true
+        genreLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: .detailsLabelSpacing).isActive = true
         genreLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: .detailsSpacing).isActive = true
         genreLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: .detailsSpacing * -1).isActive = true
     }
     
     private func setupReleaseDateLabel() {
-        releaseDateLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: .detailsSpacing).isActive = true
+        releaseDateLabel.topAnchor.constraint(equalTo: genreLabel.bottomAnchor, constant: 20).isActive = true
         releaseDateLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: .detailsSpacing).isActive = true
         releaseDateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: .detailsSpacing * -1).isActive = true
     }
     
     private func setupCopyrightLabel() {
-        copyrightLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: .detailsSpacing).isActive = true
+        copyrightLabel.topAnchor.constraint(equalTo: releaseDateLabel.bottomAnchor, constant: .detailsLabelSpacing).isActive = true
         copyrightLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: .detailsSpacing).isActive = true
         copyrightLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: .detailsSpacing * -1).isActive = true
     }

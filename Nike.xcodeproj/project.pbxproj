@@ -31,6 +31,7 @@
 		93A19F8F2548122000492A76 /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19F8E2548122000492A76 /* AlbumDetailsView.swift */; };
 		93A19F9425482DD200492A76 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19F9325482DD200492A76 /* UIViewController.swift */; };
 		93A19FBA25483ECE00492A76 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19FB925483ECE00492A76 /* UIDevice.swift */; };
+		93A19FBF2548588500492A76 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19FBE2548588500492A76 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		93A19F8E2548122000492A76 /* AlbumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsView.swift; sourceTree = "<group>"; };
 		93A19F9325482DD200492A76 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		93A19FB925483ECE00492A76 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		93A19FBE2548588500492A76 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				93A19F642547C48C00492A76 /* Layout.swift */,
 				93A19F9325482DD200492A76 /* UIViewController.swift */,
 				93A19FB925483ECE00492A76 /* UIDevice.swift */,
+				93A19FBE2548588500492A76 /* DateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A19FBF2548588500492A76 /* DateFormatter.swift in Sources */,
 				93A19F732547CA8F00492A76 /* Fonts.swift in Sources */,
 				93A19FBA25483ECE00492A76 /* UIDevice.swift in Sources */,
 				934DD6A125465C0400CD26CD /* TopAlbumsViewController.swift in Sources */,

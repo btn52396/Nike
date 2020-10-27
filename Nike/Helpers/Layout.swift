@@ -24,6 +24,8 @@ extension CGFloat {
     public static var buttonRadius: CGFloat { 5 }
     /// Spacing between UI elements in detail view
     public static var detailsSpacing: CGFloat { 20 }
+    /// Spacing between labels in detail view
+    public static var detailsLabelSpacing: CGFloat { 5 }
     /// Visit album button spacing
     public static var buttonSpacing: CGFloat { 20 }
     /// Visit album button height
