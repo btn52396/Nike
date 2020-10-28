@@ -9,9 +9,11 @@
 import UIKit
 
 class SpinnerViewController: UIViewController {
-    
+    // Use the indicator view in UIKit
     var spinner = UIActivityIndicatorView(style: .large)
-
+    
+    // MARK: - Lifecycle
+    
     override func loadView() {
         view = UIView()
         

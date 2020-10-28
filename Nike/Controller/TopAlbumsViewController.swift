@@ -15,7 +15,7 @@ class TopAlbumsViewController: UITableViewController, RefreshDelegate {
     private let retryViewController = RetryViewController()
     private let spinnerViewController = SpinnerViewController()
     private let cellId = "AlbumCell"
-    private var albumViewModels: [AlbumViewModel] = []
+    var albumViewModels: [AlbumViewModel] = []
     
     // MARK: - Lifecycle
     
@@ -39,6 +39,7 @@ class TopAlbumsViewController: UITableViewController, RefreshDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(AlbumCell.self, forCellReuseIdentifier: cellId)
+        tableView.accessibilityIdentifier = "TopAlbumsTableView"
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.backgroundView = spinnerViewController.view
@@ -103,7 +104,7 @@ extension TopAlbumsViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NikeClient.shared.albums.count
+        return albumViewModels.count
     }
 }
 

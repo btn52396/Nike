@@ -40,7 +40,7 @@ class NikeClient {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     do {
-                        let result = try JSONDecoder().decode(Response.self, from: data)
+                        let result = try NikeClient.decode(data: data)
                         self.albums = result.feed.albums
                         completionHandler(nil)
                     } catch let error {
@@ -54,4 +54,17 @@ class NikeClient {
             }.resume()
         }
     }
+    
+    public static func decode(data: Data) throws -> Response {
+        do {
+            return try JSONDecoder().decode(Response.self, from: data)
+        } catch {
+            print(error)
+            throw NikeClientError.decodeFailure
+        }
+    }
+}
+
+enum NikeClientError: Error {
+    case decodeFailure
 }

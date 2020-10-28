@@ -31,6 +31,8 @@
 		93A19F8F2548122000492A76 /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19F8E2548122000492A76 /* AlbumDetailsView.swift */; };
 		93A19F9425482DD200492A76 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19F9325482DD200492A76 /* UIViewController.swift */; };
 		93A19FBF2548588500492A76 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A19FBE2548588500492A76 /* DateFormatter.swift */; };
+		93A1A008254903A000492A76 /* MockFeedMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A007254903A000492A76 /* MockFeedMaker.swift */; };
+		93A1A0152549080100492A76 /* MockFeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A1A0142549080100492A76 /* MockFeed.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		93A19F8E2548122000492A76 /* AlbumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsView.swift; sourceTree = "<group>"; };
 		93A19F9325482DD200492A76 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		93A19FBE2548588500492A76 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		93A1A007254903A000492A76 /* MockFeedMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedMaker.swift; sourceTree = "<group>"; };
+		93A1A0142549080100492A76 /* MockFeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockFeed.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				934DD6B325465C0500CD26CD /* NikeTests.swift */,
+				93A1A007254903A000492A76 /* MockFeedMaker.swift */,
+				93A1A0142549080100492A76 /* MockFeed.json */,
 				934DD6B525465C0500CD26CD /* Info.plist */,
 			);
 			path = NikeTests;
@@ -348,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A1A0152549080100492A76 /* MockFeed.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A1A008254903A000492A76 /* MockFeedMaker.swift in Sources */,
 				934DD6B425465C0500CD26CD /* NikeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

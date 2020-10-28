@@ -9,9 +9,11 @@
 import UIKit
 
 class RetryViewController: UIViewController {
-    
+        
     var retryView = RetryView()
 
+    // MARK: - Lifecycle
+    
     override func loadView() {
         view = UIView()
         

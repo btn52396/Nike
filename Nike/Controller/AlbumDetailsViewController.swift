@@ -16,6 +16,7 @@ class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
     
     var albumDetailsView: AlbumDetailsView = {
         let albumDetailsView = AlbumDetailsView()
+        albumDetailsView.accessibilityIdentifier = "albumDetailsView"
         albumDetailsView.translatesAutoresizingMaskIntoConstraints = false
         return albumDetailsView
     }()
@@ -45,7 +46,7 @@ class AlbumDetailsViewController: UIViewController, AlbumDetailsViewDelegate {
     
     // MARK: - Setup Views
     
-    private func setupViews() {
+    func setupViews() {
         view.backgroundColor = .primaryBackground
         title = "Album Details"
             
